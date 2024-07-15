@@ -18,17 +18,19 @@ public class FindLargestString {
  */
         //largest string
 
-        String s = list.stream().reduce((a, b) -> a.length() > b.length() ? a : b).get();
-        System.out.println(s);
-
-
-
         //mul of all num's
         /*
         Integer reduce = numbers.stream().reduce(1, (a, b) -> a *b);
         System.out.println(reduce);
 
          */
+        String s = list.stream().reduce((a, b) -> a.length() > b.length() ? a : b).get();
+        System.out.println(s);
+
+        //sum of all num's
+        Integer reduce = numbers.stream().reduce(1, (a, b) -> a *b);
+        System.out.println(reduce);
+
 
     }
 }

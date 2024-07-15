@@ -15,7 +15,6 @@ public class Employee implements Comparator<Employee> {
 
     @Override
     public int compare(Employee o1, Employee o2) {
-
         return (int) (o2.getSalry()-o1.getSalry());
 
     }

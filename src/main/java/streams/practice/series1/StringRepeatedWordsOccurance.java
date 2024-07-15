@@ -1,12 +1,15 @@
 package streams.practice.series1;
 
+
 import java.util.Arrays;
 import java.util.List;
+import java.lang.reflect.Array;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StringRepeatedWordsOccurance {
     public static void main(String[] args) {
+
 
         //string words count
         /*
@@ -34,7 +37,7 @@ public class StringRepeatedWordsOccurance {
         collect.entrySet().stream().filter(i->i.getValue()>1).forEach(i->System.out.println(i));
          */
 
-        //which string repeats more time
+        //which string repeats more time in the list of strings
 
         /*
         List<String> stringList = Arrays.asList("hello","inDia","hello","mania","indIa","India");
@@ -55,6 +58,16 @@ public class StringRepeatedWordsOccurance {
         String s ="hello";
         Arrays.stream(s.split("")).map(i->new StringBuilder(i).reverse()).forEach(System.out::print);
 
+
+
+        String s1="hello";
+
+        Map<String, Long> collect = Arrays.stream(s1.split("")).collect(Collectors.groupingBy(a -> a, Collectors.counting()));
+        System.out.println(collect);
+
     }
 
-}
+
+
+    }
+

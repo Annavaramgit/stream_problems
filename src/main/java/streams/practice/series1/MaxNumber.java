@@ -8,7 +8,9 @@ import java.util.stream.Collectors;
 
 public class MaxNumber {
     public static void main(String[] args) {
+
         List<Integer> numbers = Arrays.asList(10, 12, 52, 85, 1, 10, 12);
+
 
         //max number
         /*
@@ -34,14 +36,14 @@ public class MaxNumber {
 
 
         //limit (print fisrt few numbers)
+
         //  numbers.stream().limit(2).forEach(System.out::println);
 
         //sum of first 3 numbers
         /*
         int sum = numbers.stream().limit(3).mapToInt(i -> i).sum();
         System.out.println(sum);
-*/
-
+        */
 
     }
 }

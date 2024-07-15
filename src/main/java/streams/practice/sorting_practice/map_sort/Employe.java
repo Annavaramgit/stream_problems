@@ -11,4 +11,5 @@ public class Employe {
     private String name;
     private long salary;
     private String department;
+
 }
