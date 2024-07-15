@@ -8,9 +8,11 @@ public class Employee_Main {
     public static void main(String[] args) {
         List<Employee> empData = Employee_Data.data();
 
+        /*
         //sort based on name (without using comparator implementations
         List<Employee> collect = empData.stream().sorted(Comparator.comparing(Employee::getName)).collect(Collectors.toList());
         System.out.println(collect);
+         */
 
         //sort based on the salary with comparator implementation
         /*
@@ -19,5 +21,11 @@ public class Employee_Main {
         System.out.println(collect);
     }
     */
+        //print lowest salry employee objcet
+        Employee employee = empData.stream()
+                .reduce((emp1, emp2) -> emp1.getSalry() < emp2.getSalry() ? emp1 : emp2)
+                .get();
+        System.out.println(employee);
+
     }
 }

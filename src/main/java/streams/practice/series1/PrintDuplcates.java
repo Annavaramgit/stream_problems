@@ -35,7 +35,7 @@ public class PrintDuplcates {
         numbers.stream().distinct().forEach(System.out::println);
  */
 
-/*
+
         PrintDuplcates s1= new PrintDuplcates(19,"raj");
         PrintDuplcates s2= new PrintDuplcates(23,"kumar");
         PrintDuplcates s3= new PrintDuplcates(24,"rani");
@@ -45,7 +45,7 @@ public class PrintDuplcates {
         list.add(s2);
         list.add(s3);
         list.add(s4);
-
+/*
         //print same age group people
    Map<Integer,List<PrintDuplcates>>  res= list.stream().collect(Collectors.groupingBy(PrintDuplcates::getAge));
 //        res.forEach((age, names) -> {
@@ -68,7 +68,18 @@ public class PrintDuplcates {
 
          */
 
+        /*
+        //print count of duplicates
+        Map<Integer, Long> collect = numbers.stream().collect(Collectors.groupingBy(a -> a, Collectors.counting()));
 
+        collect.entrySet().stream().filter(a->a.getValue()>1).
+        forEach(System.out::println);
 
+         */
+
+        Map<Integer, Long> collect = list.stream().collect(Collectors.groupingBy(PrintDuplcates::getAge, Collectors.counting()));
+        collect.entrySet().stream()
+                .filter(a->a.getValue()>1)
+                .forEach(System.out::println);
     }
 }
