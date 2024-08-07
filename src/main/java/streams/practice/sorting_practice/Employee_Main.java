@@ -23,7 +23,7 @@ public class Employee_Main {
     */
         //print lowest salry employee objcet
         Employee employee = empData.stream()
-                .reduce((emp1, emp2) -> emp1.getSalry() < emp2.getSalry() ? emp1 : emp2)
+                .reduce((emp1, emp2) -> emp1.getSalry() > emp2.getSalry() ? emp1 : emp2)
                 .get();
         System.out.println(employee);
 

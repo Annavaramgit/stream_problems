@@ -21,25 +21,37 @@ public class BankMain {
         System.out.println("enter how much money you want");
         double amount = sc.nextDouble();
 
+        //this is shows emi for client selected bank
+/*
+        Bank bank = banks.stream().filter(i -> i.getBankName().equalsIgnoreCase(bankName))
+                .findFirst().orElse(null);
 
-      Bank foundBank =   banks.stream().filter(i->i.getBankName().equalsIgnoreCase(bankName))
-                .findFirst()
-                .orElse(null);
+        if(bank!=null){
+          double monthlyEmi  = emiCalculate(years,bank.getRateOfInterest(),amount) ;
+            System.out.println("Bank: "+bank.getBankName()+"  Emi: "+monthlyEmi);
+        }
+        else{
+            System.out.println("invalid..");
+        }
 
-      if(foundBank!=null){
-          double emiResult = emiCalculate(years, foundBank.getRateOfInterest(),amount);
-          System.out.println("bank name:"+foundBank.getBankName()+" Monthly Emi"+ emiResult);
-      }
-    }
+ */
 
 
+        //this is shows at a time emi for all banks
+        banks.stream().
+                forEach(bank->
+                {
+                    double emi = emiCalculate(years,bank.getRateOfInterest(),amount);
+                    System.out.println("Bank: "+bank.getBankName()+" Emi: "+ emi);
+                });
 
-    public static double emiCalculate(int duration,double rateOfInterest,double principleAmount){
-        int months = duration*12;
-        double monthlyInterest = rateOfInterest/(12*100);
-        return (principleAmount*monthlyInterest*Math.pow(1+monthlyInterest,months))/
-                (Math.pow(1+monthlyInterest,months)-1);
+}
+    public static double emiCalculate(int years,double rateOfInterest,double amount){
+        int months = years*12;
+        double monthlyRateOfInterest = rateOfInterest/(12*100);
 
-    }
+        return (amount*monthlyRateOfInterest*Math.pow(1+monthlyRateOfInterest,months))/(Math.pow(1+monthlyRateOfInterest,months)-1);
 
+
+}
 }

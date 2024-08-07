@@ -28,7 +28,7 @@ public class PrintDuplcates {
       System.out.println(s);
 
 
-        //way-2 of print duplicates only
+        //way-2 of print duplicates only**
         Set<Integer> set = new HashSet<>();
         Set<Integer>set1= numbers.stream().filter(i->!set.add(i)).collect(Collectors.toSet());
         System.out.println(set1);
@@ -38,39 +38,32 @@ public class PrintDuplcates {
  */
 
 
-
         PrintDuplcates s1 = new PrintDuplcates(19, "raj");
-        PrintDuplcates s2 = new PrintDuplcates(23, "kumar");
+        PrintDuplcates s2 = new PrintDuplcates(24, "kumar");
         PrintDuplcates s3 = new PrintDuplcates(24, "rani");
-        PrintDuplcates s4 = new PrintDuplcates(24, "raj kumar");
+        PrintDuplcates s4 = new PrintDuplcates(24, "raJ");
 
         List<PrintDuplcates> list = new ArrayList<>();
         list.add(s1);
         list.add(s2);
         list.add(s3);
         list.add(s4);
-/*
+
         //print same age group people
-   Map<Integer,List<PrintDuplcates>>  res= list.stream().collect(Collectors.groupingBy(PrintDuplcates::getAge));
+        Map<String, List<PrintDuplcates>> res = list.stream().collect(Collectors.groupingBy(i -> i.getName().toLowerCase()));
 
 
-//        res.forEach((age, names) -> {
-//            System.out.println("Age " + age + ": " + names);
-//        });
-
-                    res.entrySet().stream()
+        res.entrySet().stream()
                 .filter(entry -> entry.getValue().size() > 1)  // Filter out groups with more than one person
                 .forEach(entry -> {
-                    System.out.println("Age " + entry.getKey() + ": " + entry.getValue());
+                    System.out.println("Same Age " + entry.getKey() + ": " + entry.getValue());
+
                 });
 
 
-        //print age greater than 20
-        /*
-        list.stream().filter( a-> a.getAge()>20)
-                .collect(Collectors.mapping(PrintDuplcates::getName,Collectors.toList())).forEach(System.out::println);
 
-         */
+
+
 
         /*
         //print count of duplicates
@@ -83,7 +76,6 @@ public class PrintDuplcates {
          */
 
 
-
 //count same age group people
 /*
         Map<Integer, Long> collect = list.stream().collect(Collectors.groupingBy(PrintDuplcates::getAge, Collectors.counting()));
@@ -94,12 +86,17 @@ public class PrintDuplcates {
  */
 
 
-
-
+//print age greater than 20
+/*
+        list.stream().filter(a -> a.getAge() > 20)
+                .collect(Collectors.mapping(PrintDuplcates::getName, Collectors.toList())).forEach(System.out::println);*/
+/*
         Map<Integer, Long> collect = list.stream().collect(Collectors.groupingBy(PrintDuplcates::getAge, Collectors.counting()));
         collect.entrySet().stream()
                 .filter(a->a.getValue()>1)
                 .forEach(System.out::println);
+
+ */
 
     }
 }

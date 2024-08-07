@@ -8,7 +8,7 @@ public class PrimeNumberPrint {
 
 
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(10, 2, 5, 85, 10, 8, 5, 7, 11, 13);
+        List<Integer> numbers = Arrays.asList(10, 2,1, 5, 85, 10, 8, 5, 7, 11, 13);
 
         numbers.stream()
                 .filter(PrimeNumberPrint::isPrime)//calls isPrime method

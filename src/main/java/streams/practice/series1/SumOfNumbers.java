@@ -50,7 +50,7 @@ public class SumOfNumbers {
          */
 
 
-       // numbers.stream().distinct().forEach(System.out::println);
+       numbers.stream().distinct().forEach(System.out::println);
 
 
     }

@@ -14,10 +14,16 @@ public class Employe_Main {
         emp.put(new Employe("raju",102,"java"),50);
         emp.put(new Employe("mery",190,"chemist"),20);
 
-        
         //sort if the sorted is object
         emp.entrySet().stream()
-                .sorted(Map.Entry.comparingByKey(Comparator.comparing(Employe::getName)))
+                .sorted(Map.Entry.<Employe,Integer>comparingByKey(Comparator.comparing(Employe::getName)))
+                .forEach(System.out::println);
+
+        System.out.println("-----------------------------------------");
+
+        //sort if the sorted is object reverse
+        emp.entrySet().stream()
+                .sorted(Map.Entry.<Employe,Integer>comparingByKey(Comparator.comparing(Employe::getName)).reversed())
                 .forEach(System.out::println);
     }
 }

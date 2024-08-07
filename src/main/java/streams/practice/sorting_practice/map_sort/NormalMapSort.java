@@ -38,7 +38,7 @@ public class NormalMapSort {
         System.out.println(collect2);
 
          */
-        //descending
+        //descending based on value
         List<Map.Entry<Integer, String>> collect3 = map.entrySet().stream().sorted(Map.Entry.<Integer,String>comparingByValue().reversed()).collect(Collectors.toList());
         System.out.println(collect3);
     }

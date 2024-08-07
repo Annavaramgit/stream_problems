@@ -2,7 +2,7 @@ package streams.practice.sorting_practice.map_sort;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
+//for based on department print lowest salary/highest salary employee
 public class EmployeeMain2 {
     public static void main(String[] args) {
         List<Employe> list = new ArrayList<>();
@@ -12,7 +12,9 @@ public class EmployeeMain2 {
         list.add(new Employe("manas",2100,"java"));
         list.add(new Employe("jaddu",1100,"java"));
         list.add(new Employe("harish",2100,"python"));
-/*
+
+        //each dept lowest
+
         Map<String, Optional<Employe>> collect = list.stream().collect(
                 Collectors.groupingBy(Employe::getDepartment
                         , Collectors.minBy(Comparator.comparing(Employe::getSalary)))
@@ -22,14 +24,17 @@ public class EmployeeMain2 {
         collect.entrySet().stream()
                 .forEach(System.out::println);
 
- */
+
+        /*
         Scanner sc = new Scanner(System.in);
         System.out.println("emter dept:");
         String dept = sc.nextLine();
 
-;        Optional<Employe> deoartment = list.stream().filter(i -> i.getDepartment().equalsIgnoreCase(dept))
+        Optional<Employe> deoartment = list.stream().filter(i -> i.getDepartment().equalsIgnoreCase(dept))
                 .max(Comparator.comparing(Employe::getSalary));
         System.out.println(deoartment);
+
+         */
 
     }
 }
