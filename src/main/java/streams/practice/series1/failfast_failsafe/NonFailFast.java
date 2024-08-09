@@ -36,7 +36,7 @@ public class NonFailFast {
         while(it.hasNext()){
             String s =(String) it.next();
             System.out.println(s);
-            list.add("india"); 
+            list.add("india");
         }
 
 
