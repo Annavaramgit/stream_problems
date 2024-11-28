@@ -16,13 +16,13 @@ public class StudentPercentMain {
         list.add(new Students("mahesh",(new Subjects(90,43,90,85))));
         list.add(new Students("jaddu",(new Subjects(20,43,50,5))));
 
-    Students s= new Students();
+   // Students s= new Students();
 
         int total=400;
 
        list.stream().filter(i -> (((i.getSubjects().getEnglish() + i.getSubjects().getMaths() + i.getSubjects().getPhysics()
-                        + i.getSubjects().getScience()) / (double) total) * 100) > 20.0)
-               // .map(i -> i.getName())   /*  name only prints instread of whole object*/
+                        + i.getSubjects().getScience()) / (double) total) * 100) > 70.0)
+                .map(i -> i.getName())   /*  name only prints instread of whole object*/
                 //.sorted(Comparator.comparing(Students::getName))
                .forEach(System.out::println);
 

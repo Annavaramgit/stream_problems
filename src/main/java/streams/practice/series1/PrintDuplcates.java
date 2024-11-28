@@ -33,13 +33,13 @@ public class PrintDuplcates {
         Set<Integer>set1= numbers.stream().filter(i->!set.add(i)).collect(Collectors.toSet());
         System.out.println(set1);
 
-          //non duplicates(remove duplicates
-        numbers.stream().distinct().forEach(System.out::println);
+          //non duplicates(remove duplicates)
+      //  numbers.stream().distinct().forEach(System.out::println);
  */
 
 
         PrintDuplcates s1 = new PrintDuplcates(19, "raj");
-        PrintDuplcates s2 = new PrintDuplcates(24, "kumar");
+        PrintDuplcates s2 = new PrintDuplcates(24, "ranI");
         PrintDuplcates s3 = new PrintDuplcates(24, "rani");
         PrintDuplcates s4 = new PrintDuplcates(24, "raJ");
 
@@ -50,15 +50,19 @@ public class PrintDuplcates {
         list.add(s4);
 
         //print same age group people
-        Map<String, List<PrintDuplcates>> res = list.stream().collect(Collectors.groupingBy(i -> i.getName().toLowerCase()));
+        Map<Object, Long> res = list.stream().collect(Collectors.groupingBy(i -> i.getName().toLowerCase(), Collectors.counting()));
 
+        res.entrySet().stream().filter(i -> i.getValue() > 1).forEach(System.out::println); //this line or below lines also if below line then remove Collectors.counting() in above
 
+/*
         res.entrySet().stream()
                 .filter(entry -> entry.getValue().size() > 1)  // Filter out groups with more than one person
                 .forEach(entry -> {
                     System.out.println("Same Age " + entry.getKey() + ": " + entry.getValue());
 
                 });
+
+ */
 
 
 

@@ -11,9 +11,9 @@ public class EmpMain {
         emp.add(new Emp("phani", 11200));
         emp.add(new Emp("raj", 13250));
 
-/*
-        //hihest salry of employe
 
+        //hihest salry of employe
+/*
         Optional<Emp> max = emp.stream().max(Comparator.comparing(Emp::getSalary));
         System.out.println(max);
 
@@ -21,7 +21,6 @@ public class EmpMain {
         Optional<String> s = emp.stream().max(Comparator.comparing(Emp::getSalary)).map(i -> i.getName());
         System.out.println(s.get());
 */
-
         //lowest salry of employee
         /*
         Optional<Emp> min = emp.stream().min(Comparator.comparing(Emp::getSalary));
@@ -33,9 +32,12 @@ public class EmpMain {
         Optional<String> first = emp.stream().sorted((i1,i2)->Double.compare(i2.getSalary(),i1.getSalary())).map(each -> each.getName()).findFirst();
         System.out.println(first.get());
          */
-        int[] arr = {1, 2, 3, 1, 2, 4, 5,5};
 
+        //applying streams on arrays
+        /*
+        int[] arr = {1, 2, 3, 1, 2, 4, 5,5};
         Arrays.stream(arr).distinct().forEach(System.out::println);
+         */
 
     }
 }

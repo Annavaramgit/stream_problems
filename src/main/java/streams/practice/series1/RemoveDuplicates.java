@@ -13,7 +13,8 @@ public class RemoveDuplicates {
         for (int i = 0; i < len; i++) {
             isDuplicate = false;
             // Check if arr[i] is a duplicate
-            for (int j = 0; j < i; j++) {
+           // for (int j = 0; j < i; j++) {
+            for(int j=i+1;j<len;j++){
                 if (arr[i] == arr[j]) {
                     isDuplicate = true;
                     break;

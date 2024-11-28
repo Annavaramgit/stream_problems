@@ -22,7 +22,7 @@ public class BankMain {
         double amount = sc.nextDouble();
 
         //this is shows emi for client selected bank
-/*
+
         Bank bank = banks.stream().filter(i -> i.getBankName().equalsIgnoreCase(bankName))
                 .findFirst().orElse(null);
 
@@ -31,19 +31,22 @@ public class BankMain {
             System.out.println("Bank: "+bank.getBankName()+"  Emi: "+monthlyEmi);
         }
         else{
-            System.out.println("invalid..");
+            System.out.println("invalid bank..");
         }
 
- */
 
 
-        //this is shows at a time emi for all banks
+
+        //this is shows at a time emi for all banks+
+     /*
         banks.stream().
-                forEach(bank->
+                forEach(bank1->
                 {
-                    double emi = emiCalculate(years,bank.getRateOfInterest(),amount);
-                    System.out.println("Bank: "+bank.getBankName()+" Emi: "+ emi);
+                    double emi = emiCalculate(years,bank1.getRateOfInterest(),amount);
+                    System.out.println("Bank: "+bank1.getBankName()+" Emi: "+ emi);
                 });
+
+      */
 
 }
     public static double emiCalculate(int years,double rateOfInterest,double amount){

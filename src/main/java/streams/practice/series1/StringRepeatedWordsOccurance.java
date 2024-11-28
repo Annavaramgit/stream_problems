@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.lang.reflect.Array;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class StringRepeatedWordsOccurance {
@@ -12,29 +13,32 @@ public class StringRepeatedWordsOccurance {
 
         //string words count
 /*
-        String s11="indianii";
+        String s11 = "indian";
         Map<String, Long> collect = Arrays.stream(s11.split("")).collect(Collectors.groupingBy(a -> a, Collectors.counting()));
         System.out.println(collect);
-*/
+
+ */
 
 
         //print the word which repeats more time
-/*
+  /*
         String s1= "indianii";
+
         Map<String, Long> collect1 = Arrays.stream(s1.split("")).collect(Collectors.groupingBy(i -> i, Collectors.counting()));
 
         Map.Entry<String, Long> stringLongEntry = collect1.entrySet().stream().max(Map.Entry.comparingByValue())
                 .get();
         System.out.println(stringLongEntry.getKey()+" : : "+stringLongEntry.getValue());
-*/
+ */
 
 
         //in the list of string string count / repeated string
-/*
-        List<String> stringList = Arrays.asList("hello","India","hello","mania","inDia");
+ /*
+        List<String> stringList = Arrays.asList("hello","inDia","hello","mania","indIa","India");
         Map<String, Long> collect = stringList.stream().collect(Collectors.groupingBy(i -> i.toLowerCase(), Collectors.counting()));
-        collect.entrySet().stream().filter(i->i.getValue()>1).forEach(i->System.out.println(i));
-*/
+       collect.entrySet().stream().filter(i->i.getValue()>1).forEach(i->System.out.println(i));
+
+ */
 
         //which string repeats more time in the list of strings
 
@@ -44,7 +48,7 @@ public class StringRepeatedWordsOccurance {
 
         Map.Entry<String, Long> stringLongEntry = collect.entrySet().stream().max(Map.Entry.comparingByValue()).get();
         System.out.println(stringLongEntry.getKey()+"::"+stringLongEntry.getValue());
-        */
+       */
 
         //reverse the strings prsent in the list
 /*
@@ -68,8 +72,12 @@ public class StringRepeatedWordsOccurance {
 */
 
         /* reverse without change word index */
+        //
+         /*
         String s12 = "hello world";
         Arrays.stream(s12.split(" ")).map(i -> new StringBuilder(i).reverse()).forEach(i -> System.out.print(i + " "));
+
+        */
     }
 
 
