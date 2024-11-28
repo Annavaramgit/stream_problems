@@ -8,7 +8,8 @@ public class FrequentNumbersPrintInArray {
         {
             System.out.print(arr[i]+" ");
             count++;
-            i = i+count;
+
+            i+=count;
         }
 
     }

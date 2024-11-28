@@ -2,6 +2,7 @@ package streams.practice.sorting_practice;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Employee_Main {
@@ -22,10 +23,15 @@ public class Employee_Main {
     }
     */
         //print lowest salry employee objcet
+        /*
         Employee employee = empData.stream()
                 .reduce((emp1, emp2) -> emp1.getSalry() > emp2.getSalry() ? emp1 : emp2)
                 .get();
         System.out.println(employee);
+*/
 
+        //second largest salary taking guy
+        Optional<Employee> first = empData.stream().sorted(Comparator.comparing(Employee::getSalry).reversed()).skip(1).findFirst();
+        System.out.println(first);
     }
 }

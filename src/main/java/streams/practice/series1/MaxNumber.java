@@ -12,11 +12,17 @@ public class MaxNumber {
         List<Integer> numbers = Arrays.asList(10, 12, 52, 85, 1, 10, 12);
 
 
+        //largest num (reduce used for combine elements of stream in single res)
+        /*
+        Optional<Integer> reduce = numbers.stream().reduce((i1, i2) -> i1 > i2 ? i1 : i2);
+        System.out.println(reduce);
+        */
+
         //max number
         /*
         int max=numbers.stream().mapToInt(i->i).max().getAsInt();
         System.out.println("max value: "+max);
-         */
+        */
 
         //min number
         /*
@@ -25,14 +31,18 @@ public class MaxNumber {
          */
 
         //sort the numbers(ascending)
-        //  numbers.stream().sorted().distinct().forEach(System.out::println);
+        /*List<Integer> collect = numbers.stream().sorted().distinct().collect(Collectors.toList());
+        System.out.println(collect);*/
 
-        //sort the numbers (descending oreder)
-        //numbers.stream().sorted(Comparator.reverseOrder()).distinct().forEach(System.out::println);
+        //sort the numbers (descending order
+        /*List<Integer> collect = numbers.stream().sorted(Comparator.reverseOrder()).distinct().collect(Collectors.toList());
+        System.out.println(collect);*/
 
         //get second largest number
+       /*
         int first = numbers.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
         System.out.println(first);
+       */
 
 
         //limit (print fisrt few numbers)
