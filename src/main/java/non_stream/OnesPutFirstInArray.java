@@ -29,6 +29,6 @@ public class OnesPutFirstInArray {
       Arrays.stream(arr).forEach(System.out::print);
 */
 
-        //Arrays.stream(arr).boxed().sorted((i1,i2)->i2-i1).forEach(System.out::print);
+        Arrays.stream(arr).boxed().sorted((i1,i2)->i2-i1).forEach(System.out::print);
     }
 }

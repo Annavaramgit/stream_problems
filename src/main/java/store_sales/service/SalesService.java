@@ -10,9 +10,7 @@ import store_sales.repo.SalesRepo;
 import store_sales.repo.StoreRepo;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @Slf4j
@@ -29,7 +27,7 @@ public class SalesService {
         this.storeSalesInfoDto = storeSalesInfoDto;
     }
 
-    //for based on store name will find how many products selled and totap price and quantity
+    //for based on store namen it will find how many products sold and total price and quantity
     public List<StoreSalesInfoDto> salesInfo(String storeName) {
 
         Store store = storeRepo.findByName(storeName.toLowerCase().trim());
@@ -59,7 +57,6 @@ public class SalesService {
                         return storeSalesInfoDto1;
 
                     }).collect(Collectors.toList());
-
 
         } else
             return null;
