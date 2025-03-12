@@ -83,6 +83,12 @@ public class StringsProblemSolution {
         /* find any name which has length  10 or more otherwise handle exception */
         //names.stream().filter(str->str.length()>10).findAny().orElseThrow(()-> new NoSuchElementException("no one has 10 letter's name !! "));
 
+        //find count how many times each letter in string ,, find hihest reapted letter
+        String str ="kajhddhsdudhfdfuhjdh";
+        Map<String, Long> letterCount = Arrays.stream(str.split("")).collect(Collectors.groupingBy((i -> i), Collectors.counting()));
+        letterCount.entrySet().stream().forEach(System.out::println);
+        Map.Entry<String, Long> hisheshReapetedLetter = letterCount.entrySet().stream().max(Map.Entry.comparingByValue()).get();
+        System.out.println("highest times reapted letter : "+hisheshReapetedLetter);
 
     }
 }
